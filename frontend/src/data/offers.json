@@ -1,0 +1,89 @@
+{
+    
+        "initialIatems": [
+            {
+                "id": "1",
+                "name": "ladies Bag",
+                "price": "$250",
+                "image": "../assets/deals_images/bag2.png",
+                "discount": "20%"
+
+            },
+            {
+                "id": "2",
+                "name": "Watch",
+                "price": "$2500",
+                "image": "../assets/deals_images/watch1.png",
+                "discount": "10%"
+
+            },
+            {
+                "id": "3",
+                "name": "Eye Shadow",
+                "price": "$50",
+                "image": "../assets/deals_images/eye1.png",
+                "discount": "30%"
+
+            },
+            {
+                "id": "4",
+                "name": "Shoe",
+                "price": "$350",
+                "image": "../assets/deals_images/shoe1.png",
+                "discount": "25%"
+
+            },
+            {
+                "id": "5",
+                "name": "Perfume",
+                "price": "$125",
+                "image": "../assets/deals_images/perfume1.png",
+                "discount": "15%"
+
+            }
+        ],
+        "newItems": [
+             {
+                "id": "1",
+                "name": "ladies Bag",
+                "price": "$250",
+                "image": "../assets/deals_images/bag1.png",
+                "discount": "20%"
+
+            },
+            {
+                "id": "2",
+                "name": "Watch",
+                "price": "$2500",
+                "image": "../assets/deals_images/watch2.png",
+                "discount": "10%"
+
+            },
+            {
+                "id": "3",
+                "name": "Eye Shadow",
+                "price": "$50",
+                "image": "../assets/deals_images/eye2.png",
+                "discount": "30%"
+
+            },
+            {
+                "id": "4",
+                "name": "Shoe",
+                "price": "$350",
+                "image": "../assets/deals_images/shoe2.png",
+                "discount": "25%"
+
+            },
+            {
+                "id": "5",
+                "name": "Perfume",
+                "price": "$125",
+                "image": "../assets/deals_images/perfume2.png",
+                "discount": "15%"
+
+            }
+
+        ]
+   
+}
