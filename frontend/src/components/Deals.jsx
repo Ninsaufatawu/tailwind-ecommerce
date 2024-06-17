@@ -1,26 +1,25 @@
 import React, { useState, useEffect } from 'react';
-import data from '../data/offers.json'
-
-
+import { data }  from '../data/offers'; 
 
 export const Deals = () => {
-    const [items, setItems] = useState(data.initialIatems);
-    const [timeLeft, setTimeLeft] = useState(30); // Initial countdown time in seconds (1 day)
+    const [items, setItems] = useState(data.initialItems);
+    const [timeLeft, setTimeLeft] = useState(86400 + 86400); // Initial countdown time in seconds (1 day)
 
     useEffect(() => {
         const interval = setInterval(() => {
             setTimeLeft(prevTime => {
                 if (prevTime <= 1) {
-                    clearInterval(interval);
-                    setItems(data.newItems); // Change items when time is up
-                    return 86400; // Reset the timer to 1 day
+                    // Switch items between initialItems and newItems
+                    setItems(prevItems => prevItems === data.initialItems ? data.newItems : data.initialItems);
+                    return 86400; // Reset the timer to 30 seconds
                 }
                 return prevTime - 1;
             });
-        }, 100);
+        }, 1000); // Adjusted interval to 1 second
 
         return () => clearInterval(interval);
     }, []);
+
 
     const formatTime = (seconds) => {
         const days = Math.floor(seconds / (24 * 60 * 60));
@@ -33,32 +32,31 @@ export const Deals = () => {
     const { days, hours, minutes, secs } = formatTime(timeLeft);
 
     return (
-        <div className='container mx-auto  max-w-screen-xl  pt-20'>
+        <div className='container mx-auto max-w-screen-xl pt-20'>
             <div className='flex flex-col items-start mb-10 md:mx-0 mx-20'>
                 <p className='text-2xl font-semibold mr-auto mb-2 mx-10 md:mx-0'>Deals and Offers</p>
-                <div className=' p-0 rounded-lg w-20  flex space-x-5'>
+                <div className='p-0 rounded-lg w-20 flex space-x-5'>
                     <div className='text-center p-3 rounded bg-secondary text-white'>
                         <div className='text-lg '>{String(days).padStart(2, '0')}</div>
                         <div className='text-xs '>Days</div>
                     </div>
-                    <div className='text-center p-3 rounded  bg-secondary text-white'>
-                        <div className='  text-lg'>{String(hours).padStart(2, '0')}</div>
+                    <div className='text-center p-3 rounded bg-secondary text-white'>
+                        <div className='text-lg'>{String(hours).padStart(2, '0')}</div>
                         <div className='text-xs'>Hour</div>
                     </div>
-                    <div className='text-center p-3 rounded  bg-secondary text-white'>
+                    <div className='text-center p-3 rounded bg-secondary text-white'>
                         <div className='text-lg'>{String(minutes).padStart(2, '0')}</div>
                         <div className='text-xs'>Mins</div>
                     </div>
-                    <div className='text-center p-3 rounded   bg-secondary text-white'>
+                    <div className='text-center p-3 rounded bg-secondary text-white'>
                         <div className='text-lg'>{String(secs).padStart(2, '0')}</div>
                         <div className='text-xs'>Secs</div>
                     </div>
                 </div>
             </div>
-            <div className='grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6  '>
-                
+            <div className='grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6'>
                 {items.map((item) => (
-                    <div key={item.id} className='relative border p-4 rounded-lg shadow-lg  bg-primary'>
+                    <div key={item.id} className='relative border p-4 rounded-lg shadow-lg bg-primary'>
                         <div className='flex flex-col items-center'>
                             <div className='w-36 h-36 mb-4 relative bg-white'>
                                 <img src={item.image} className='object-contain drop-shadow-2xl w-full h-full' alt={item.name} />
