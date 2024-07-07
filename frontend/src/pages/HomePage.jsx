@@ -4,6 +4,7 @@ import { Banner } from '../components/Banner'
 import { Deals } from '../components/Deals'
 import { ProductCategory } from '../components/ProductCategory'
 import { FeaturedProduct } from '../components/FeaturedProduct'
+import { TrendyProducts } from '../components/TrendyProducts'
 
 export const HomePage = () => {
   return (
@@ -13,6 +14,7 @@ export const HomePage = () => {
       <Deals/>
       <ProductCategory/>
       <FeaturedProduct/>
+      <TrendyProducts/>
     </>
   )
 }

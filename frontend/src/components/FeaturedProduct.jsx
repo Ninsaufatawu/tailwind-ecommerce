@@ -1,8 +1,10 @@
-import React from 'react';
+import React ,{useState} from 'react';
 import { data } from '../data/featuredProduct';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../redux/cartSlice';
 import { IoCartOutline } from 'react-icons/io5';
+import { GrFavorite } from "react-icons/gr";
+import { MdFavorite } from "react-icons/md";
 import {Link} from 'react-router-dom'
 
 export const FeaturedProduct = () => {
@@ -10,6 +12,21 @@ export const FeaturedProduct = () => {
 
     const handleAddToCart = (item) => {
         dispatch(addToCart(item));
+    }
+
+    const [like, setLike] = useState({})
+
+    const handleFavorite = (itemId)=> {
+        setLike(prevLike =>{
+            if(prevLike[itemId]){
+                return {...prevLike, [itemId]: false}
+            }
+
+            return {...prevLike, [itemId]: true}
+               
+        })
+        
+
     }
 
    
@@ -42,8 +59,15 @@ export const FeaturedProduct = () => {
                         <div className='items-center flex flex-col'>
                             <div className='relative m-5 p-6 bg-white items-center group rounded-md'>
                                 <img src={item.img} alt="image" className='w-40 object-contain drop-shadow-2xl h-full' />
-                                <div className='hidden group-hover:flex absolute  inset-0 flex-col justify-center items-center border-secondary  bg-white bg-opacity-55 shadow-lg'>
+                                <button 
+                                    onClick={() => handleFavorite(item.id)} 
+                                    className={`absolute top-2 right-2 text-2xl z-10 `}
+                                >
+                                    {like[item.id] ? <MdFavorite className=' text-red-600 text-2xl' /> : <GrFavorite  className='text-2xl ' />}
+                                </button>
+                                <div className='hidden group-hover:flex absolute  inset-0 flex-col justify-center items-center border-secondary -z-1  bg-white bg-opacity-55 shadow-lg'>
                                     <div className='flex flex-col space-y-2 justify-center  w-44'>
+                                        
                                         <div className='border bg-white rounded-sm items-center   border-green-500 '>
                                             <p className=' flex justify-center'>Pre Order</p>
                                         </div>
