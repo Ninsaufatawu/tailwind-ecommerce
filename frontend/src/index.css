@@ -9,3 +9,35 @@
     --color-secondary: #06a85c;
     --color-orange: #ea6112;
 }
+.underline-custom-1::after{
+    content: '';
+    display: block;
+    width: 15%;
+    height: 2px;
+    background: #000;
+    margin-top: 4px;
+}
+.underline-custom-2::after{
+    content: '';
+    display: block;
+    width: 24%;
+    height: 2px;
+    background: #000;
+    margin-top: 4px;
+}
+.underline-custom-3::after{
+    content: '';
+    display: block;
+    width: 20%;
+    height: 2px;
+    background: #000;
+    margin-top: 4px;
+}
+.underline-custom-4::after{
+    content: '';
+    display: block;
+    width: 37%;
+    height: 2px;
+    background: #000;
+    margin-top: 4px;
+}

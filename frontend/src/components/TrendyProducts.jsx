@@ -1,6 +1,7 @@
 import React from 'react'
 import { LiaGreaterThanSolid } from "react-icons/lia";
 import { PiLessThan } from "react-icons/pi";
+import woman1 from "../assets/deals_images/woman-1.png"
 
 export const TrendyProducts = () => {
   return (
@@ -19,29 +20,55 @@ export const TrendyProducts = () => {
 
       <div className='flex justify-between items-start h-80 gap-10 pt-12'>
 
-        <div className='w-72 h-80 border rounded-lg flex items-center justify-center'>
-          <p>khfgdhfs</p>
+        <div className='w-72 h-80 border rounded-lg flex  bg-white'>
+         <div>
+
+        </div>
+        <div className=' object-contain  '>
+          <img className=' w-36' src={woman1} alt="" />
+        </div>
         </div>
 
         <div className='w-full max-w-2xl grid grid-cols-2 grid-rows-2 gap-10'>
           <div className='bg-white h-32 flex flex-col p-6 space-y-2 rounded-lg'>
             <p className=' text-2xl font-medium'>Louis Will Bag</p>
-            <span className=' text-xl underline w-1 '>Collection</span>
+            <span className=' text-md underline-custom-1 '>Collection</span>
           </div>
-          <div className='h-32 bg-white flex items-center justify-center  rounded-lg'>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+          <div className='h-32 bg-white rounded-lg'>
+            <div className=' p-6 space-y-2 flex flex-col'>
+              <p className=' text-2xl font-medium'>For Her</p>
+              <span className=' text-md underline-custom-2 '>Women's Collection</span>
+            </div>
+
+            <div>
+
+            </div>
           </div>
-          <div className='h-32 bg-white flex items-center justify-center  rounded-lg'>
-            <p>Leather Clocks</p>
-            <span>Explore More</span>
+          <div className='h-32 bg-white space-y-2 flex flex-col p-6  rounded-lg'>
+            <p className=' text-2xl font-medium'>Leather Clocks</p>
+            <span className=' text-md underline-custom-3 '>Explore More</span>
           </div>
-          <div className='bg-white h-32 flex items-center justify-center  rounded-lg'>
-            <p>Lorem ipsum dolor sit amet consectetur.</p>
+          <div className='bg-white h-32 flex   rounded-lg'>
+            <div className='p-6 space-y-2 flex flex-col bg-slate-500'>
+                <p className=' text-2xl font-medium'>For Him</p>
+                <span className=' text-md underline-custom-4 '>Men's Collection</span>
+            </div>
+
+            <div>
+
+            </div>
           </div>
         </div>
 
         <div className='w-72 h-80 border rounded-lg flex items-center justify-center'>
-          <p>Lorem ipsum dolor sit.</p>
+          <div>
+
+          </div>
+          <div>
+            <img src={woman1} alt="" />
+          </div>
+
+
         </div>
       </div>
     </div>
